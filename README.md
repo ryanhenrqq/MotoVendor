@@ -2,4 +2,4 @@
 
 - Este é um site usado apenas para demonstração de responsividade e layout dos meus sites.
 
-- Essa empresa é ficticia. Qualquer semelhança com um comércio real é mera semelhança.
+- Essa empresa é ficticia. Qualquer semelhança com um comércio real é mera coincidencia.
