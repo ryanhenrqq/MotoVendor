@@ -6,6 +6,7 @@ import cg160Img from './assets/img/cg160.jpg'
 import fz25Img from './assets/img/fz25.jpg'
 import bmw310Img from './assets/img/bmw310naked.webp'
 import noprofileIco from './assets/noprofile.jpg'
+import menuIco from './assets/menu.png'
 
 function App() {
   const [topListen, setTopListen] = useState<boolean>(true)
@@ -168,6 +169,7 @@ function App() {
           </div>
         </div>
       </div>
+      <a href="https://www.flaticon.com/free-icons/menu" title="menu icons">Menu icons created by SeyfDesigner - Flaticon</a>
       <footer>
         <div className="left-side-ft">
           <button>Sobre nós</button>
@@ -183,18 +185,43 @@ function App() {
 }
 
 function Header() {
+  const [showDocked, setShowDocked] = useState(false)
+  const handleShowDock = () => {
+    !showDocked?setShowDocked(true):setShowDocked(false)
+  }
   return (
-    <header>
-      <div className='left-side'>
-        <h1>MotoVendor</h1>
-        <b>A maior variedade de motos</b>
-      </div>
-      <div className='right-side'>
-        <div>Inicio</div>
-        <div>Catálogo</div>
-        <div>Contato</div>
-      </div>
-    </header>
+    <>
+      <header>
+        <div className='left-side'>
+          <h1>MotoVendor</h1>
+          <b>A maior variedade de motos</b>
+        </div>
+        <div className='right-side'>
+          <div>Inicio</div>
+          <div>Catálogo</div>
+          <div>Contato</div>
+        </div>
+        <div className='right-side-docked'>
+          <img src={menuIco} alt="Menu" className='right-side-docked-menuimg' onClick={handleShowDock} />
+        </div>
+        
+      </header>
+      {showDocked?
+            <DockedMenuHead />
+            :
+            null
+          }
+    </>
+  )
+}
+
+function DockedMenuHead() {
+  return(
+    <div className='docked-menu-overlay'>
+      <div>Inicio</div>
+      <div>Catálogo</div>
+      <div>Contato</div>
+    </div>
   )
 }
 
